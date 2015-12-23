@@ -1,0 +1,21 @@
+{
+	"name": "QCabNode",
+	"version": "0.0.1",
+	 "private": true,
+	 "main": "app.js",
+	 "scripts": {
+		"start": "node app.js",
+		"preinstall": "npm i -g node-gyp && node-gyp clean"
+	},
+	"dependencies": {
+		"express": "3.2.6",
+		"ejs": "2.3.4",
+		"body-parser": "1.14.1",
+		"cookie-parser": "1.4.0",
+		"path": "*",
+		"morgan": "1.6.1",
+		"orm": "2.1.29",
+		"log": "1.4.0",
+		"mysql": "2.9.0"
+	}
+}

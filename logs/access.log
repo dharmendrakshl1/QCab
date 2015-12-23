@@ -1,0 +1,5 @@
+::1 - - [09/Dec/2015:09:53:05 +0000] "GET / HTTP/1.1" 200 11 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36"
+::1 - - [09/Dec/2015:09:53:52 +0000] "GET / HTTP/1.1" 200 11 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36"
+::1 - - [09/Dec/2015:09:53:52 +0000] "GET /favicon.ico HTTP/1.1" 404 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36"
+::1 - - [09/Dec/2015:09:54:08 +0000] "GET / HTTP/1.1" 200 11 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36"
+[0mGET / [32m200 [0m9.508 ms - 11[0m
