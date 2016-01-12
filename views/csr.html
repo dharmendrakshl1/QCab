@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+    <title>Welcome To Q Cab</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+    <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <style>
+        /* following two viewport lines are equivalent to meta viewport statement above, needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }  @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }           @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+    </style>
+
+    <!-- Uncomment the following scripts if you convert your "Standard HTML5" project into a "Cordova" project. -->
+    <!-- <script src="cordova.js"></script> -->          <!-- phantom library, needed for Cordova api calls, added during build -->
+    <!-- <script src="js/app.js"></script> -->           <!-- recommended location of your JavaScript code relative to other JS files -->
+    <!-- <script src="xdk/init-dev.js"></script> -->     <!-- normalizes device and document ready events, see README for details -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/rowDetailsImages.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+     <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+    
+    
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="createCab.html"><i class="fa fa-user fa-fw"></i>Create Cab</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="../index.html"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">CSR</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            View Requests
+                        </div>
+                        <div>
+                        Toggle column: 
+                        <a href="#" class="toggle-vis" data-column="1">Employee Id</a> - 
+                        <a href="#" class="toggle-vis" data-column="2">Employee Name</a> - 
+                        <a class="toggle-vis" href="#" data-column="3">Gender</a> - 
+                        <a href="#" class="toggle-vis" data-column="4">Project</a> -
+                        <a class="toggle-vis" href="#" data-column="5">Contact No</a> -
+                        <a class="toggle-vis" href="#" data-column="6">Manager Id</a> - 
+                        <a class="toggle-vis" href="#" data-column="7">Manager Name</a> - 
+                        <a href="#" class="toggle-vis" data-column="8">Pickup Date</a> -
+                        <a href="#" class="toggle-vis" data-column="9">Pickup Time</a> - 
+                        <a class="toggle-vis" href="#" data-column="10">Pickup Point</a> -
+                        <a class="toggle-vis" href="#" data-column="11">Changed By</a> - 
+                        <a href="#" class="toggle-vis" data-column="12">Cab No</a> -
+                        <a class="toggle-vis" href="#" data-column="13">Trip Id</a> - 
+                        <a href="#" class="toggle-vis" data-column="14">Status</a> -
+                        <a class="toggle-vis" href="#" data-column="15">Closed By</a> - 
+                    </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="dataTable_wrapper">
+                                <table class="table table-responsive table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th><input type="checkbox" name="selectRow" /></th>
+                                            <th>Id</th>
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>Project</th>
+                                            <th>Contact No</th>
+                                            <th>Manager Id</th>
+                                            <th>Manager Name</th>
+                                            <th>Pickup Date</th>
+                                            <th>Pickup Time</th>
+                                            <th>Pickup Point</th>
+                                            <th>Changed By</th>
+                                            <th>Cab No</th>
+                                            <th>Trip Id</th>
+                                            <th>Status</th>
+                                            <th>Closed By</th>
+                                            <th>Details</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                            
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+             
+            <!-- /.row -->
+             
+            <!-- /.row -->
+             
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+
+/* Formatting function for row details - modify as you need */
+function format ( d ) {
+    // `d` is the original data object for the row
+    return '<div class="table-responsive"><table cellpadding="0" cellspacing="0" border="0" class="table table-bordered">'+
+        '<tr>'+
+            '<th>Request Id : '+d.RequestId+'</th>'+
+            '<th>Status : '+d.Status+'</th>'+
+        '<tr>'+
+            '<td>'+
+                '<table class="table table-bordered">'+
+                    '<tr>'+
+                        '<td>Project</td>'+
+                        '<td>'+d.EmpProjectName+'</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                        '<td>Changed By</td>'+
+                        '<td>'+d.ChangedBy+'</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                        '<td>Cab Number</td>'+
+                        '<td>'+d.CabNo+'</td>'+
+                    '</tr>'+
+                '</table>'+
+            '</td>'+
+            '<td>'+
+                '<table class="table table-bordered">'+
+                    '<tr>'+
+                        '<td>Manager Name</td>'+
+                        '<td>'+d.ManagerName+'</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                        '<td>Closed By</td>'+
+                        '<td>'+d.ClosedBy+'</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                        '<td>Trip Id</td>'+
+                        '<td>'+d.TripId+'</td>'+
+                    '</tr>'+
+                '</table>'+
+            '</td>'+
+        '</tr>'+
+        '<tr>'+
+            '<td colspan="2">Type Reason'+
+            '<p><textarea class="empTextArea" id="'+d.EmpId+'"></textarea></p></td>'+
+        '</tr>'+
+        '<tr>'+
+            '<td colspan="2">'+
+            '<div class="btnDiv">'+
+            '<input type="button" class="btn btn-success" id="btn'+d.EmpId+'" value="Approve" />&nbsp;'+
+            '<input type="button" class="btn btn-danger" id="btn'+d.EmpId+'" value="Reject" />'+
+            '</div>'+
+            '</td>'+
+        '</tr>'+
+    '</table></div>';
+}
+
+
+
+    $(document).ready(function() {
+
+          $.ajax({
+                url: "http://lpt248-b1:8080/QCab/qcabservice/qcabcabrequestservice",
+
+                type: 'POST',
+             
+                // The name of the callback parameter, as specified by the YQL service
+                //jsonp: "callback",
+             
+                // Tell jQuery we're expecting JSONP
+                dataType: "jsonp",
+             
+                // Tell YQL what we want and that we want JSON
+                data: {
+                    managerId: "2",
+                    format: "json"
+                },
+             
+                // Work with the response
+                success: function( response ) {
+                    console.log( response ); // server response
+                }
+            });
+
+
+
+
+
+        var dt=$('#dataTables-example').DataTable({
+            //"processing": true,
+            //"serverSide": true,
+            "ajax": {
+                "url": "../server-side/csr.txt",
+                //"dataType": "jsonp"
+            },
+
+                "columns": [
+            { 
+                "defaultContent": '<input type="checkbox" name="selectRow" />',
+                "width": "12px",
+                "orderable":      false
+            },
+            { "data": "EmpId" },
+            { "data": "EmpName" },
+            { "data": "Gender" },
+            { "data": "EmpProjectName" },
+            { "data": "EmpContactNumber" },
+            { "data": "ManagerId" },
+            { "data": "ManagerName" },
+            { "data": "PickupDate" },
+            { "data": "PickupTime" },
+            { "data": "PickupPoint" },
+            { "data": "ChangedBy" },
+            { "data": "CabNo" },
+            { "data": "TripId" },
+            { "data": "Status" },
+            { "data": "ClosedBy" },
+            {
+                "className":      'details-control',
+                "orderable":      false,
+                "data":           null,
+                "width":"20px",
+                "defaultContent": ''
+            }
+        ],
+        "order": [[1, 'asc']],
+                "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+                stateSave: true
+        });
+
+        var detailRows = [];
+        
+        
+
+
+        $('#dataTables-example tbody').on( 'click', 'tr td.details-control', function () {
+            var tr = $(this).closest('tr');
+            var row = dt.row( tr );
+            var idx = $.inArray( tr.attr('id'), detailRows );
+     
+            if ( row.child.isShown() ) {
+                tr.removeClass( 'details' );
+                row.child.hide();
+     
+                // Remove from the 'open' array
+                detailRows.splice( idx, 1 );
+            }
+            else {
+                tr.addClass( 'details' );
+                row.child( format( row.data() ) ).show();
+     
+                // Add to the 'open' array
+                if ( idx === -1 ) {
+                    detailRows.push( tr.attr('id') );
+                }
+            }
+            
+        } );
+
+        // On each draw, loop over the `detailRows` array and show any child rows
+        dt.on( 'draw', function () {
+            $.each( detailRows, function ( i, id ) {
+                $('#'+id+' td.details-control').trigger( 'click' );
+            } );
+        } );
+
+        $('a.toggle-vis').on( 'click', function (e) {
+            e.preventDefault();
+     
+            // Get the column API object
+            var column = dt.column( $(this).attr('data-column') );
+     
+            // Toggle the visibility
+            column.visible( ! column.visible() );
+            dt.columns.adjust().draw();
+        } );
+
+
+    });
+
+
+
+
+    </script>
+</body>
+</html>

@@ -15,7 +15,7 @@ var logger = logconfig.getLogger();
 }*/
 
 exports.connectDB = function(dbcallback){
-	orm.connect('mysql://root:root\@123@localhost/qcab?pool=true', function(err, db){
+	orm.connect('mysql://root:password@localhost/qcab?pool=true', function(err, db){
 		if(!err){
 			console.log("Database Got connected successfully");
 			logger.debug("Database Got connected successfully");

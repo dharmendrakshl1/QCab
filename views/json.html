@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+    <title>Welcome To Q Cab</title>
+    <script src="../js/jquery.min.js"></script>
+
+<script>
+$(document).ready(function() {
+
+	alert('result-------');
+
+          $.ajax({
+
+                headers:{
+                    'Accept':'application/json',
+                    'content-Type':'application/jsonp'
+                },
+                'type': 'POST',
+                'url': 'http://lpt248-b1:8080/QCab/qcabservice/qcabcabrequestservice',
+                'data': JSON.stringify({
+                    "managerId": "1"
+                }),
+                'dataType': 'jsonp',
+
+                success: function( response ) {
+                    console.log("Response Value = "+response ); // server response
+                    alert('result1-------');
+                }
+
+                // error: function(err){
+                //     console.log(err);
+                // }
+            });
+
+        });
+
+</script>
+
+</head>
+<body>
+
+	</body>
+
+	</html>
