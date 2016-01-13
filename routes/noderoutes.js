@@ -32,5 +32,8 @@ module.exports = function(app){
     
 	//routes for all services provided by apps
 	app.post('/api/qcab/authentication/validatecredential', loginController.validateCredential);
+	app.get('/api/qcab/cabrequesteddetails/employee/:employeeId', qcabControllers.getCabRequestedDetailsForEmployee);
 	app.get('/api/qcab/cabrequesteddetails/manager/:managerId', qcabControllers.getCabRequestedDetailsForManager);
+	//app.get('/api/qcab/cabrequesteddetails/admin/:adminId', qcabControllers.getCabRequestedDetailsForAdmin);
+	//app.get('/api/qcab/cabrequesteddetails/csr/:csrId', qcabControllers.getCabRequestedDetailsForCSR);
 }
